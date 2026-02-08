@@ -34,6 +34,7 @@ jobs:
 
       - name: Run Packer Build
         run: |
+          rm -rf ~/.config/packer/plugins
           packer init aws-ubuntu.pkr.hcl
           packer validate aws-ubuntu.pkr.hcl
           packer fmt aws-ubuntu.pkr.hcl
